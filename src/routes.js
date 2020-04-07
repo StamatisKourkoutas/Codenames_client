@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './Components/App';
-import Room from './Components/Room'
+import Settings from './Components/Settings';
+import Room from './Components/Room';
 
 const NoMatchPage = () => {
   return (
@@ -14,6 +15,7 @@ function myRoutes(){
     <BrowserRouter>
       <Switch>
         <Route path="/" component={App} exact />
+        <Route path="/settings" component={Settings}/>
         <Route path="/rooms/:id" component={Room} />
         <Route component={NoMatchPage} />
       </Switch>

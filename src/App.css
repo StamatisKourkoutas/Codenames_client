@@ -1,0 +1,155 @@
+.siteTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: xx-large;
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+.roomNameForm-div{
+    width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+}
+
+.joinRoombtn {
+    border: 1px solid #383;
+    background-color: #4CAF50; /* Green */
+    width:100%;
+}
+
+.joinRoombtn:hover, .joinRoombtn:focus{
+    background: #383;
+    border: 1px solid #383;
+}
+
+.toggleSpy-btn{
+    margin-top: 1em;
+}
+
+/*Room*/
+
+.siteTitleRoom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0em;
+    margin-bottom: 2em;
+    font-size: xx-large;
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+.sidePan{
+    position:fixed;
+    padding: 2em 0em 1em 0em;
+    height: auto;
+    z-index: 1;
+    white-space: nowrap;
+    overflow-x: hidden;
+    transition: 0.5s;
+    background-color: #111;
+    color: white;
+}
+
+.sidePan-closed{
+    width:0;
+}
+
+.sidePan-open{
+    width: 20em;
+}
+
+.mainPan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 1em 1em 1em;
+}
+
+.secMainPan{
+    display: inline-block;
+}
+
+
+.userTitle-lbl{
+    font-weight: bold;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.user-lbl{
+    margin-left: 1em;
+    margin-right: 1em;
+    line-height: 2em;
+}
+
+.spy-icon{
+    width: 2em;
+}
+
+/*Board*/
+.board{
+    display: grid;
+    width: 50em;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: auto auto auto auto auto;
+    border: 2px outset;
+    background-color: rgb(219, 155, 15);
+}
+
+/*Card*/
+.card{
+    margin: 0.3em;
+    border: 2px outset;
+    line-height: 6em;
+    text-align: center;
+}
+
+.card-hover:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.card-lbl:hover{
+    cursor: pointer;
+}
+
+.card-spy{
+    background-color: rgb(228, 226, 226);
+}
+
+.card-spy-red{
+    color: red;
+}
+
+.card-spy-blue{
+    color: cornflowerblue;
+}
+
+.card-spy-bomb{
+    font-weight: bold;
+}
+
+.card-red{
+    background-color: indianred;
+}
+
+.card-blue{
+    background-color: cornflowerblue;
+}
+
+.card-neutral{
+    background-color: grey;
+}
+
+.card-bomb{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}

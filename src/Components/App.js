@@ -1,6 +1,9 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 
+import MyNavBar from "./MyNavBar.js"
+import '../App.css'
+
 class App extends React.Component {
 
   constructor() {
@@ -21,13 +24,16 @@ class App extends React.Component {
   render(){
     return (
       <div className="">
-        <label>Game room name</label>
-        <input type="text" className="" value={this.state.roomName} onChange={(e) => this.handleRoomName(e)} />
-        <button className="" onClick={
-          ()=>this.joinRoom()
-        }>
-          Create new game room
-        </button>
+        <MyNavBar/>
+        <div className="siteTitle">Codenames</div>
+        <div className="roomNameForm-div">
+          <label className="col-sm-15 col-form-label">Game Room Name</label>
+          <div class="col-sm-15">
+            <input type="text" class="form-control" placeholder="eg. Enterprise"
+              value={this.state.roomName} onChange={(e) => this.handleRoomName(e)}/>
+          </div>
+          <button className="btn btn-success joinRoombtn" onClick={()=>this.joinRoom()}>Create / Join room</button>
+        </div>
       </div>
     )
   }
