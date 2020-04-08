@@ -11,12 +11,18 @@ class Board extends React.Component {
       roomName: this.props.roomName,
       clients: this.props.clients,
       wordList: [],
-      cardList: []
+      cardList: [],
+      redScore: 9,
+      blueScore: 8
     };
   }
 
   componentDidMount(){
-    socket.on("BoardUpdate", (wordList) => {this.setState({wordList: wordList}) })
+    socket.on("BoardUpdate", (wordList) => {
+      var scores =this.calculateScore(wordList);
+      console.log(scores);
+      this.setState({wordList: wordList, redScore: scores[0], blueScore: scores[1]});
+    })
   }
 
   componentWillUnmount() {
@@ -27,6 +33,21 @@ class Board extends React.Component {
     if(this.props.clients !== prevProps.clients){
       this.setState({clients: this.props.clients})
     }
+  }
+
+  calculateScore(wordList){
+    var redScore = 9;
+    var blueScore = 8;
+    wordList.forEach(item => {
+      if(item.state==="open"){
+        if(item.type==="red"){
+          redScore -= 1; 
+        }else if(item.type==="blue"){
+          blueScore -= 1;
+        }
+      }
+    });
+    return [redScore, blueScore]
   }
 
   render(){
@@ -45,6 +66,7 @@ class Board extends React.Component {
 
     return (
       <div className="">
+        Score: <label className="redScore-lbl">{this.state.redScore}</label>-<label className="blueScore-lbl">{this.state.blueScore}</label>
         <div className="board">{board}</div>
       </div>
     )

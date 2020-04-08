@@ -43,7 +43,7 @@
 
 .sidePan{
     position:fixed;
-    padding: 2em 0em 1em 0em;
+    padding: 2rem 0rem 1rem 0rem;
     height: auto;
     z-index: 1;
     white-space: nowrap;
@@ -51,6 +51,7 @@
     transition: 0.5s;
     background-color: #111;
     color: white;
+    font-size: 1rem;
 }
 
 .sidePan-closed{
@@ -58,11 +59,12 @@
 }
 
 .sidePan-open{
-    width: 20em;
+    width: 18rem;
 }
 
 .mainPan {
     display: flex;
+    flex-direction: column;
     height: 70vh;
     width:80vw;
     /*border: 1px solid black;*/
@@ -75,7 +77,10 @@
 
 .secMainPan{
     display: inline-block;
-}.toggleSpy-btn{
+    /*border: 1px solid black;*/
+}
+
+.toggleSpy-btn{
     margin-top: 1em;
 }
 
@@ -109,6 +114,14 @@
     grid-template-columns: auto auto auto auto auto;
     border: 2px outset;
     background-color: rgb(178, 197, 238);
+}
+
+.redScore-lbl{
+    color: indianred;
+}
+
+.blueScore-lbl{
+    color: cornflowerblue;
 }
 
 /*Card*/
