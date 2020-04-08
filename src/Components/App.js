@@ -6,11 +6,28 @@ import '../App.css'
 
 class App extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      roomName: ""
+      roomName: "",
+      width: 0, height: 0
     };
+
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+  
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    console.log(window.innerWidth, window.innerHeight)
   }
 
   handleRoomName(event) {
@@ -32,7 +49,7 @@ class App extends React.Component {
             <input type="text" class="form-control" placeholder="eg. Enterprise"
               value={this.state.roomName} onChange={(e) => this.handleRoomName(e)}/>
           </div>
-          <button className="btn btn-success joinRoombtn" onClick={()=>this.joinRoom()}>Create / Join room</button>
+          <button style={{width:this.state.width/2}} className="btn btn-success joinRoombtn" onClick={()=>this.joinRoom()}>Create / Join room</button>
         </div>
       </div>
     )
