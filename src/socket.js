@@ -1,6 +1,6 @@
 import socketIOClient from "socket.io-client";
 
-const endpoint = "http://127.0.0.1:4001";
+const endpoint = "https://codenames-serv.herokuapp.com";
 const socket = socketIOClient(endpoint);
 
 export default socket;
