@@ -66,19 +66,19 @@
 
 .mainPan {
     display: flex;
-    /*width:80vh;*/
+    height: 70vh;
+    width:80vw;
     border: 1px solid black;
     justify-content: center;
     align-items: center;
     /*margin: 3em 1em 1em 1em;*/
-    /*margin-left: auto;
-    margin-right: auto;*/
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .secMainPan{
     display: inline-block;
 }
-
 
 .userTitle-lbl{
     font-weight: bold;
@@ -99,9 +99,8 @@
 /*Board*/
 .board{
     display: grid;
-    /*width: 50vh;*/
-    margin-left: auto;
-    margin-right: auto;
+    height: 60vh;
+    width: 70vw;
     grid-template-columns: auto auto auto auto auto;
     border: 2px outset;
     background-color: rgb(178, 197, 238);
@@ -109,9 +108,15 @@
 
 /*Card*/
 .card{
-    margin: 0.2em;
+    height: 11vh;
+    width: 12vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
     border: 2px outset;
-    line-height: 6em;
+
+    line-height: 11vh;
     text-align: center;
 }
 
