@@ -6,28 +6,11 @@ import '../App.css'
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      roomName: "",
-      width: 0, height: 0
+      roomName: ""
     };
-
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-  }
-
-  componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
-  }
-  
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-  }
-  
-  updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
-    console.log(window.innerWidth, window.innerHeight)
   }
 
   handleRoomName(event) {
@@ -45,11 +28,11 @@ class App extends React.Component {
         <div className="siteTitle">Codenames</div>
         <div className="roomNameForm-div">
           <label className="col-sm-15 col-form-label">Game Room Name</label>
-          <div class="col-sm-15">
-            <input type="text" class="form-control" placeholder="eg. Enterprise"
+          <div className="col-sm-15">
+            <input type="text" className="form-control" placeholder="eg. Enterprise"
               value={this.state.roomName} onChange={(e) => this.handleRoomName(e)}/>
           </div>
-          <button style={{width:this.state.width/2}} className="btn btn-success joinRoombtn" onClick={()=>this.joinRoom()}>Create / Join room</button>
+          <button className="btn btn-success joinRoombtn" onClick={()=>this.joinRoom()}>Create / Join room</button>
         </div>
       </div>
     )
