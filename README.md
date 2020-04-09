@@ -15,12 +15,8 @@ Users can create and connect to virtual rooms which contain a board to play the 
 - This front-end client needs to be supported by a Node.js server found in [this repository](https://github.com/StamatisKourkoutas/codenames_server). Firstly, install and run this server.
 - Clone this project, navigate to the project directory and run:
 
-    ### `npm install`
-
-    This installs all the necessary dependencies to build our application
+    **`npm install`** This installs all the necessary dependencies to build our application
     
-    ### `npm start`
-
-    This runs the app in development mode.<br />
+    **`npm start`** This runs the app in development mode.<br />
 
 -  After these, open [http://localhost:3000](http://localhost:3000) to view the front-end client in your browser.
