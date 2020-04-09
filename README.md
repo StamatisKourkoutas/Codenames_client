@@ -1,7 +1,7 @@
 # Codenames-client: A React Front-end Client for the popular codenames game.
 
 <p align="center">
-    <img src="./screenshots/room_screenshot.png" alt="" width="510em" height="500em">
+    <img src="./screenshots/room_screenshot.png" alt="" width="510em" height="500em" style="border: 1px solid black;">
 </p >
 
 ---
