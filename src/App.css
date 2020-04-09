@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 7vh;
+    margin-bottom: 7vh;
     font-size: xx-large;
     font-weight: bold;
     color: cornflowerblue;
@@ -184,4 +184,12 @@
     background-color: black;
     color: white;
     font-weight: bold;
+}
+
+.instructions-div{
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    text-align: justify;
 }
