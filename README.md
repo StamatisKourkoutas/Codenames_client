@@ -4,7 +4,7 @@
     <img src="./screenshots/room_screenshot.png" alt="" width="720em" height="700em">
 </p >
 
----
+## Description
 
 The popular multiplayer game codenames can be played remotely via a desktop or a mobile device through this front end app. A live version of the app can be found [here](http://codenames-live.herokuapp.com/).
 
