@@ -58,7 +58,6 @@ class Room extends React.Component {
       <div className="">
         <MyNavBar/>
         <button className="btn btn-dark" onClick={()=>this.openSidePanel()}>☰ Users in room</button>
-
         <div id="sidePanel" className={this.state.sidePanStyle}>
           <label className="userTitle-lbl">{"Users in room " + this.state.roomName }</label>
           {Object.keys(this.state.clients).map((item, index) => (
@@ -84,6 +83,3 @@ class Room extends React.Component {
 }
 
 export default Room;
-
-/*
-*/

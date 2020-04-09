@@ -19,7 +19,7 @@
 
 .joinRoombtn {
     border: 1px solid #383;
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     width:100%;
 }
 
@@ -29,7 +29,6 @@
 }
 
 /*Room*/
-
 .siteTitleRoom{
     display: flex;
     justify-content: center;
@@ -67,17 +66,16 @@
     flex-direction: column;
     height: 70vh;
     width:80vw;
-    /*border: 1px solid black;*/
     justify-content: center;
     align-items: center;
-    /*margin: 3em 1em 1em 1em;*/
     margin-left: auto;
     margin-right: auto;
+    /*border: 1px solid black;*/ /*Used for css debugging*/
 }
 
 .secMainPan{
     display: inline-block;
-    /*border: 1px solid black;*/
+    /*border: 1px solid black;*/ /*Used for css debugging*/
 }
 
 .toggleSpy-btn{
@@ -136,7 +134,7 @@
     line-height: 11vh; /* for vertical centering*/
     text-align: center;
 
-    font-size: 1.5vw; /* font adjusts on mobiles and resize*/
+    font-size: 1.5vw;  /* font adjusts on mobiles and resize of window*/
 }
 
 @media screen and (min-width: 1200px) {
