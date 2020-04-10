@@ -18,7 +18,7 @@ function myRoutes(){
         <Route path="/" component={App} exact />
         <Route path="/settings" component={Settings}/>
         <Route path="/instructions" component={Instructions}/>
-        <Route path="/rooms/:id" component={Room} />
+        <Route path="/rooms/:id/:language" component={Room} />
         <Route component={NoMatchPage} />
       </Switch>
     </BrowserRouter>

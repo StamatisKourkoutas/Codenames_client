@@ -7,10 +7,11 @@ import SpyMaster from "../spy.svg"
 
 class Room extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       roomName: "",
+      language: "",
       clients: {},
       sidePanStyle: "sidePan sidePan-closed"
     };
@@ -20,9 +21,10 @@ class Room extends React.Component {
 
   componentDidMount(){
     this._isMounted = true;   // Update _isMounted
-    this.setState({roomName: this.props.match.params.id})    // Set roomName
+    // Set roomName, language
+    this.setState({roomName: this.props.match.params.id, language: this.props.match.params.language})
 
-    socket.emit('JoinRoom', this.props.match.params.id)
+    socket.emit('JoinRoom', this.props.match.params.id, this.props.match.params.language)
     socket.on("ClientsUpdate", cl => { this.setState({clients: cl}) })
     //console.log(this.props.match.params.id)
   }
@@ -57,7 +59,8 @@ class Room extends React.Component {
     return (
       <div className="">
         <MyNavBar/>
-        <button className="btn btn-dark" onClick={()=>this.openSidePanel()}>☰ Users in room</button>
+        <div className="userOptions-div">
+        <button className="btn btn-dark users-btn" onClick={()=>this.openSidePanel()}>☰ Users </button>
         <div id="sidePanel" className={this.state.sidePanStyle}>
           <label className="userTitle-lbl">{"Users in room " + this.state.roomName }</label>
           {Object.keys(this.state.clients).map((item, index) => (
@@ -69,8 +72,9 @@ class Room extends React.Component {
             </React.Fragment>
           ))}
         </div>
+        </div>
         
-        <div className="siteTitleRoom">Codenames</div>
+        <div className="siteTitle">Codenames</div>
         <div className="mainPan">
           <div className="secMainPan">
             {Object.keys(this.state.clients).length>0 && <Board clients={this.state.clients} roomName={this.state.roomName}/>}

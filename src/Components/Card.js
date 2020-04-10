@@ -63,7 +63,7 @@ class Card extends React.Component {
   render(){
     return (
       <div className={this.handleDivStyle(this.state.st, this.state.type, this.state.spymaster)} onClick={()=>this.openCard(this.state.id)}>
-        <label className={this.handleLblStyle(this.state.st, this.state.type, this.state.spymaster)}>{this.state.word /*+ " " + this.state.st + " " + this.revealType(this.state.st==="open" ||this.state.spymaster)*/}</label>
+        <label className={this.handleLblStyle(this.state.st, this.state.type, this.state.spymaster)}>{this.state.word.toUpperCase()}</label>
       </div>
     )
   }

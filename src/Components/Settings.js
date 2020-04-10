@@ -29,8 +29,8 @@ class Settings extends React.Component {
         <div className="siteTitle">Codenames</div>
         <div className="roomNameForm-div">
           <label className="col-sm-15 col-form-label">Set Username</label>
-          <div class="col-sm-15">
-            <input type="text" class="form-control" placeholder={"eg. Skywalker"}
+          <div className="col-sm-15">
+            <input type="text" class="form-control" maxlength="15" placeholder={"eg. Skywalker"}
               value={this.state.usernameField} onChange={(e) => this.handleUsername(e)}/>
           </div>
           <button className="btn btn-success joinRoombtn" onClick={()=>this.changeUsername(this.state.usernameField)}>Submit</button>

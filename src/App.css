@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 7vh;
-    margin-bottom: 7vh;
+    margin-bottom: 0vh;
     font-size: xx-large;
     font-weight: bold;
     color: cornflowerblue;
@@ -14,7 +14,7 @@
     max-width: 30em;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5vh;
+    margin-top: 7vh;
 }
 
 .joinRoombtn {
@@ -23,28 +23,24 @@
     width:100%;
 }
 
-.joinRoombtn:hover, .joinRoombtn:focus{
+.joinRoombtn:hover, .joinRoombtn:focus {
     background: #383;
     border: 1px solid #383;
 }
 
 /*Room*/
-.siteTitleRoom{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0;
-    margin-bottom: 3vh;
-    font-size: xx-large;
-    font-weight: bold;
-    color: cornflowerblue;
+.userOptions-div{
+    position:absolute;
+    z-index: 1;
+}
+
+.users-btn{
+    font-size: 1rem;
 }
 
 .sidePan{
-    position:absolute;
-    padding: 2rem 0rem 1rem 0rem;
+    padding: 0.5rem 0rem 0rem 0rem;
     height: auto;
-    z-index: 1;
     white-space: nowrap;
     overflow-x: hidden;
     transition: 0.5s;
@@ -65,18 +61,18 @@
     display: flex;
     flex-direction: column;
     height: 70vh;
-    width:80vw;
-    justify-content: center;
+    width: 84vw;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 3vh;
     /*border: 1px solid black;*/ /*Used for css debugging*/
 }
 
+/*Used for css debugging*//*
 .secMainPan{
-    display: inline-block;
-    /*border: 1px solid black;*/ /*Used for css debugging*/
-}
+    border: 1px solid black;
+}*/
 
 .toggleSpy-btn{
     margin-top: 1rem;
@@ -84,8 +80,8 @@
 
 .userTitle-lbl{
     font-weight: bold;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .user-lbl{
@@ -100,19 +96,19 @@
 
 .toggleSpy-btn{
     margin-top: 2vh;
-    width: 30vw;
-    max-width: 15rem;
+    width: 12rem;
+    font-size: 0.9rem;
 }
 
 /*Board*/
 .board{
     display: grid;
     height: 60vh;
-    width: 70vw;
+    width: 84vw;
     max-width: 50rem;
     grid-template-columns: auto auto auto auto auto;
     border: 2px outset;
-    background-color: rgb(178, 197, 238);
+    background-color: rgb(188, 206, 245);
 }
 
 .redScore-lbl{
@@ -126,20 +122,38 @@
 /*Card*/
 .card{
     height: 11vh;
-    width: 12vw;
-    max-width: 8.6rem;
+    width: 15.8vw;
+    max-width: 9.4rem;
     margin: auto;
     border: 2px outset;
 
     line-height: 11vh; /* for vertical centering*/
     text-align: center;
 
-    font-size: 1.5vw;  /* font adjusts on mobiles and resize of window*/
+    font-weight: bolder;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1100px) {
     .card {
-       font-size: 1.18rem;
+       font-size: 0.85rem;
+    }
+}
+
+@media (orientation:portrait) {
+    .board{
+        height: 60vw;
+    }
+
+    .card{
+        height: 11vw;
+        line-height: 11vw;
+        font-size: 1.45vw;  /* font adjusts by window size based on dominant dimension */
+    }
+}
+
+@media (orientation:landscape) {
+    .card{
+        font-size: 1.45vh; /* font adjusts by window size based on dominant dimension */
     }
 }
 
@@ -153,7 +167,7 @@
 }
 
 .card-spy{
-    background-color: rgb(228, 226, 226);
+    background-color: rgb(235, 236, 236);
 }
 
 .card-spy-red{
@@ -165,7 +179,10 @@
 }
 
 .card-spy-bomb{
-    font-weight: bold;
+    font-weight: bolder;
+    font-style:italic;
+    text-decoration: underline;
+    background-color: rgb(97, 96, 96);
 }
 
 .card-red{
@@ -177,7 +194,7 @@
 }
 
 .card-neutral{
-    background-color: grey;
+    background-color: darkgray;
 }
 
 .card-bomb{
@@ -190,6 +207,6 @@
     width: 70vw;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0px;
+    margin-top: 3vh;
     text-align: justify;
 }
