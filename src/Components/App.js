@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import {Form} from 'react-bootstrap'
 
 import MyNavBar from "./MyNavBar.js"
 import '../App.css'
@@ -25,7 +26,7 @@ class App extends React.Component {
   }
 
   joinRoom(roomName, language){
-    if (roomName!=""){
+    if (roomName!==""){
       this.props.history.push("/rooms/"+roomName+"/"+language);
     }
   }
@@ -43,8 +44,8 @@ class App extends React.Component {
           </div>
           <label className="col-sm-15 col-form-label">Game Language</label>
           <div>
-          <input type="radio" value="english" checked={this.state.language==="english"} onChange={(e)=>this.handleLanguageChange(e)} />English
-          <input type="radio" value="greek" checked={this.state.language==="greek"} onChange={(e)=>this.handleLanguageChange(e)}/>Greek
+            <Form.Check inline label="English" type="radio" value="english" checked={this.state.language==="english"} onChange={(e)=>this.handleLanguageChange(e)}></Form.Check>
+            <Form.Check inline label="Greek" type="radio" value="greek" checked={this.state.language==="greek"} onChange={(e)=>this.handleLanguageChange(e)}></Form.Check>
           </div>
           <button className="btn btn-success joinRoombtn" onClick={()=>this.joinRoom(this.state.roomName, this.state.language)}>Create / Join room</button>
         </div>

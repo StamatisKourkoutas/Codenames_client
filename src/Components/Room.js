@@ -41,6 +41,10 @@ class Room extends React.Component {
     socket.emit('SpymasterChange', cl, this.state.roomName)
   }
 
+  handleNewGame(){
+    socket.emit('NewGame', this.state.roomName, this.state.language);
+  }
+
   openSidePanel(){
     if(this.state.sidePanStyle==="sidePan sidePan-closed"){
     this.setState({sidePanStyle: "sidePan sidePan-open"})
@@ -60,18 +64,18 @@ class Room extends React.Component {
       <div className="">
         <MyNavBar/>
         <div className="userOptions-div">
-        <button className="btn btn-dark users-btn" onClick={()=>this.openSidePanel()}>☰ Users </button>
-        <div id="sidePanel" className={this.state.sidePanStyle}>
-          <label className="userTitle-lbl">{"Users in room " + this.state.roomName }</label>
-          {Object.keys(this.state.clients).map((item, index) => (
-            <React.Fragment key={index}>
-              <div>
-                <label className="user-lbl">{usr[index]}</label>
-                {this.state.clients[item].spymaster && <img className="spy-icon" src={SpyMaster} alt="Spymaster"/>}
-              </div>
-            </React.Fragment>
-          ))}
-        </div>
+          <button className="btn btn-dark users-btn" onClick={()=>this.openSidePanel()}>☰ Users </button>
+          <div id="sidePanel" className={this.state.sidePanStyle}>
+            <label className="userTitle-lbl">{"Users in room " + this.state.roomName }</label>
+            {Object.keys(this.state.clients).map((item, index) => (
+              <React.Fragment key={index}>
+                <div>
+                  <label className="user-lbl">{usr[index]}</label>
+                  {this.state.clients[item].spymaster && <img className="spy-icon" src={SpyMaster} alt="Spymaster"/>}
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
         </div>
         
         <div className="siteTitle">Codenames</div>
@@ -79,6 +83,7 @@ class Room extends React.Component {
           <div className="secMainPan">
             {Object.keys(this.state.clients).length>0 && <Board clients={this.state.clients} roomName={this.state.roomName}/>}
             <button className="btn btn-dark toggleSpy-btn" onClick={()=>this.handleSpymasterChange()}>Toggle Spymaster Mode</button>
+            <button className="btn btn-dark newGame-btn" onClick={()=>this.handleNewGame()}>New Game</button>
           </div>
         </div>
       </div>

@@ -22,6 +22,15 @@ class Card extends React.Component {
     if(this.props.spymaster !== prevProps.spymaster){
       this.setState({spymaster: this.props.spymaster})
     }
+    if(this.props.id !== prevProps.id){
+      this.setState({id: this.props.id})
+    }
+    if(this.props.word !== prevProps.word){
+      this.setState({word: this.props.word})
+    }
+    if(this.props.type !== prevProps.type){
+      this.setState({type: this.props.type})
+    }
   }
 
   openCard(id){

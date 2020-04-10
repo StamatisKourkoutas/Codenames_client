@@ -75,7 +75,16 @@
 }*/
 
 .toggleSpy-btn{
-    margin-top: 1rem;
+    margin-top: 2vh;
+    width: 12rem;
+    font-size: 0.9rem;
+}
+
+.newGame-btn{
+    float:right;
+    margin-top: 2vh;
+    width: 7rem;
+    font-size: 0.9rem;
 }
 
 .userTitle-lbl{
@@ -95,9 +104,7 @@
 }
 
 .toggleSpy-btn{
-    margin-top: 2vh;
-    width: 12rem;
-    font-size: 0.9rem;
+
 }
 
 /*Board*/

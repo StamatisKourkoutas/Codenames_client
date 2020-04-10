@@ -19,7 +19,7 @@ class Board extends React.Component {
 
   componentDidMount(){
     socket.on("BoardUpdate", (wordList) => {
-      var scores =this.calculateScore(wordList);
+      var scores = this.calculateScore(wordList);
       this.setState({wordList: wordList, redScore: scores[0], blueScore: scores[1]});
     })
   }
