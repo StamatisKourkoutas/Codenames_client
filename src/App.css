@@ -87,6 +87,18 @@
     font-size: 0.9rem;
 }
 
+@media screen and (max-width: 370px) {
+    .toggleSpy-btn{
+        width: 9rem;
+        font-size: 0.68rem;
+    }
+    
+    .newGame-btn{
+        width: 5.1rem;
+        font-size: 0.68rem;
+    }
+}
+
 .userTitle-lbl{
     font-weight: bold;
     margin-left: 1rem;

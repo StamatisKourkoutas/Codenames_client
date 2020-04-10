@@ -39,7 +39,7 @@ class App extends React.Component {
         <div className="roomNameForm-div">
           <label className="col-sm-15 col-form-label">Game Room Name</label>
           <div className="col-sm-15">
-            <input type="text" className="form-control" maxlength="12" placeholder="eg. Enterprise"
+            <input type="text" className="form-control" maxLength="12" placeholder="eg. Enterprise"
               value={this.state.roomName} onChange={(e) => this.handleRoomName(e)}/>
           </div>
           <label className="col-sm-15 col-form-label">Game Language</label>
