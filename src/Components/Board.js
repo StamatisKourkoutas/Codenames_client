@@ -9,7 +9,7 @@ class Board extends React.Component {
     super(props);
     this.state = {
       roomName: this.props.roomName,
-      clients: this.props.clients,
+      spymaster: this.props.spymaster,
       wordList: [],
       cardList: [],
       redScore: 9,
@@ -29,8 +29,8 @@ class Board extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    if(this.props.clients !== prevProps.clients){
-      this.setState({clients: this.props.clients})
+    if(this.props.spymaster !== prevProps.spymaster){
+      this.setState({spymaster: this.props.spymaster})
     }
   }
 
@@ -58,7 +58,7 @@ class Board extends React.Component {
           type={item.type}
           st={item.state}
           roomName={this.state.roomName}
-          spymaster={this.state.clients[socket.id].spymaster}
+          spymaster={this.state.spymaster}
         />
       </React.Fragment>
     })

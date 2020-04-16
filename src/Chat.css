@@ -1,0 +1,53 @@
+.chatOptions-div{
+    z-index: 2;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.chat-btn{
+    font-size: 1rem;
+    width: 100%;
+}
+
+.chatPan{
+    padding: 0rem 0rem 0rem 0rem;
+    width: 15rem;
+    /*transition: 0.5s;*/
+    font-size: 1rem;
+    /*border: 1px solid red;*/
+    display: flex; 
+    flex-direction: column;
+}
+
+.chatPan-closed{
+    height: 0;
+    width: 5rem;
+}
+
+.chatPan-open{
+    height: 15rem;
+}
+
+.conversation-div{
+    height: 100%;
+    background: white;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.send-div{
+    display: flex; 
+    flex-direction: row;
+    /*border: 1px solid green;*/
+}
+
+.send-btn{
+
+}
+
+.msg-area{
+
+}

@@ -1,7 +1,8 @@
 import React from 'react';
 
-import MyNavBar from "./MyNavBar.js"
+import MyNavBar from './MyNavBar.js'
 import Board from './Board.js'
+import Chat from './Chat.js'
 import socket from '../socket.js'
 import SpyMaster from "../spy.svg"
 
@@ -13,7 +14,8 @@ class Room extends React.Component {
       roomName: "",
       language: "",
       clients: {},
-      sidePanStyle: "sidePan sidePan-closed"
+      sidePanStyle: "sidePan sidePan-closed",
+      userName: ""
     };
 
     this._isMounted = false;  // Use _isMounted to avoid setting state in unmounted
@@ -47,17 +49,15 @@ class Room extends React.Component {
 
   openSidePanel(){
     if(this.state.sidePanStyle==="sidePan sidePan-closed"){
-    this.setState({sidePanStyle: "sidePan sidePan-open"})
+      this.setState({sidePanStyle: "sidePan sidePan-open"})
     }else{
       this.setState({sidePanStyle: "sidePan sidePan-closed"})
     }
   }
 
   render(){
-    
     var usr = Object.keys(this.state.clients).map((item) => {
-      if (this.state.clients[item].username==="") return item
-      else return this.state.clients[item].username
+      return this.state.clients[item].username
     })
 
     return (
@@ -81,11 +81,12 @@ class Room extends React.Component {
         <div className="siteTitle">Codenames</div>
         <div className="mainPan">
           <div className="secMainPan">
-            {Object.keys(this.state.clients).length>0 && <Board clients={this.state.clients} roomName={this.state.roomName}/>}
+            {Object.keys(this.state.clients).length>0 && <Board spymaster={this.state.clients[socket.id].spymaster} roomName={this.state.roomName}/>}
             <button className="btn btn-dark toggleSpy-btn" onClick={()=>this.handleSpymasterChange()}>Toggle Spymaster Mode</button>
             <button className="btn btn-dark newGame-btn" onClick={()=>this.handleNewGame()}>New Game</button>
           </div>
         </div>
+        {Object.keys(this.state.clients).length>0 && <Chat roomName={this.state.roomName} id={socket.id} name={this.state.clients[socket.id].username}/>}
       </div>
     )
   }
